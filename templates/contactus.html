@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/static/sty.css">
+
+</head>
+<body>
+    <div class="container">
+        <form action="/contact" method="POST" class="form" onsubmit="return validateForm()">
+            <h2>Contact Us</h2>
+            <p>Click => <a href="/login">here</a> to Login.</p>
+            <input type="text" name="firstname" class="box" placeholder="Enter First Name" required>
+            <input type="text" name="lastname" class="box" placeholder="Enter Last Name" required>
+            <input type="email" name="email" class="box" placeholder="Enter Email" required>
+            <input type="tel" name="phone" class="box" placeholder="Enter Phone Number" required>
+            <textarea name="query" class="box" placeholder="Enter Your Query" required></textarea>
+            <input type="submit" value="Submit" id="submit">
+            
+            
+        </form>
+        
+        <div class="side">
+            <img src="/static/img.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script> 
+</body>
+</html>
